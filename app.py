@@ -4,7 +4,15 @@ from controller.item import ItemController, ItemListController
 from controller.store import StoreController, StoreListController
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
+
+POSTGRES_URI = 'postgresql+psycopg2://{user}:{pw}@{host}:{port}/{db}'.format(
+    db='d64aoral2b3js8',
+    host='ec2-23-21-201-255.compute-1.amazonaws.com',
+    port='5432',
+    user='elnrwwmposjwkx',
+    pw='99e87646a577d4f21c36b7d8bec8a6a0bfde8b5218d5e27d9d51c589569c52e1'
+)
+app.config['SQLALCHEMY_DATABASE_URI'] = POSTGRES_URI
 app.config['SQLALCHEMY_TRACK_MODIFICATONS'] = False
 api = Api(app)
 
