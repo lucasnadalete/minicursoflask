@@ -13,10 +13,10 @@ app.config['SQLALCHEMY_TRACK_MODIFICATONS'] = False
 api = Api(app)
 
 
-@app.route('/')
-def hello_world():
-    return 'Minicourse - Web API with Python and Flask!'
-
+# @app.route('/')
+# def hello_world():
+#     return 'Minicourse - Web API with Python and Flask!'
+#
 
 api.add_resource(ItemController, '/item/<string:name>')
 api.add_resource(ItemListController, '/items')
