@@ -15,7 +15,7 @@ api = Api(app)
 
 @app.route('/')
 def hello_world():
-    return 'Hello, World!'
+    return 'Minicourse - Web API with Python and Flask!'
 
 
 api.add_resource(ItemController, '/item/<string:name>')
